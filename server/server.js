@@ -146,6 +146,10 @@ app.get('/logout', function(req, res, next) {
   res.redirect('/');
 });
 
+app.post('/auth/local', function (req, res, next) {
+  console.log('ENTRO AQUI');  
+});
+
 
 /**
  * Arrancamos la app

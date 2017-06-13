@@ -6,6 +6,9 @@
     "usernameField": "username",
     "passwordField": "password",
     "authPath": "/auth/local",
-    "successRedirect": "/auth/account"
+    "successRedirect": "/auth/account",
+    "setAccessToken": true,
+    "session": true,
+    "cookie": true	
   }
 }
