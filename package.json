@@ -1,0 +1,48 @@
+{
+  "name": "testGeoShop",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && nsp check"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "compression": "^1.0.3",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.3.2",
+    "cors": "^2.5.2",
+    "express-flash": "0.0.2",
+    "express-session": "^1.7.6",
+    "helmet": "^1.3.0",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-mongodb": "^3.1.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0",
+    "loopback-component-passport": "^2.2.0",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.1.5",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.1.2",
+    "passport-twitter": "^1.0.2",
+    "ejs": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "testGeoShop"
+}

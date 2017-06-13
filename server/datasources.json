@@ -1,0 +1,7 @@
+{
+  "mongoLab": {
+    "url": "mongodb://heroku_mkctgnlx:bt4npuk1bt6en70cdqria4tng1@ds121212.mlab.com:21212/heroku_mkctgnlx",	
+    "name": "mongoLab",
+    "connector": "mongodb"
+  }
+}
