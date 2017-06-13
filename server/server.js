@@ -89,6 +89,63 @@ app.get('/', function(req, res, next) {
   });
 });
 
+app.get('/auth/account', ensureLoggedIn('/login'), function(req, res, next) {
+  res.render('pages/profile', {
+     user: req.user,
+     url: req.url,
+  });
+});
+
+app.get('/login', function(req, res, next) {
+  res.render('pages/login', {
+     user: req.user,
+     url: req.url,
+  });
+});
+
+app.get('/signup', function(req, res, next) {
+  res.render('pages/singup', {
+     user: req.user,
+     url: req.url,
+  });
+});
+
+app.get('/local', function(req, res, next) {
+  res.render('pages/login', {
+    user: req.user,
+    url: req.url,
+  });
+});
+
+app.post('/signup', function(req,res,next){
+     var User = app.models.user;
+
+     var newUser = {};
+     newUser.email = req.body.email.toLowerCase();
+     newUser.username = req.body.username.trim();
+     newUser.password = req.body.password;
+     
+     User.create(newUser, function(err, user) {
+         if (err) {
+            req.flash('error', err.message);
+            return res.redirect('back');
+        } else {
+            req.login(user, function(err) {
+                if (err) {
+                    req.flash('error', err.message);
+                    return res.redirect('back');
+                }
+                 return res.redirect('/profile');
+             });
+         }
+     })
+})
+
+app.get('/logout', function(req, res, next) {
+  req.logout();
+  res.redirect('/');
+});
+
 
 /**
  * Arrancamos la app
